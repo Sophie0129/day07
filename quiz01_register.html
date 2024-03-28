@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const myFocus = () => {
+            let id , pwd, pwdChk;
+            id = document.getElementById("id");
+            pwd = document.getElementById("pwd");
+            pwdChk = document.getElementById("pwdChk");
+
+            if(id.value == "") {
+                alert("아이디는 필수 입력 항목입니다");
+                id.focus();
+            }else if(pwd.value == "") {
+                alert("비밀번호는 필수 입력 항목입니다");
+                pwd.focus();
+            }else if(pwdChk.value == "") {
+                alert("비밀번호 확인은 필수 입력 항목입니다");
+                pwdChk.focus();
+            }else if(pwd.value != pwdChk.value) {
+                alert("비밀번호 내용이 맞지 않습니다");
+                pwdChk.focus();
+                document.getElementById("Check").innerHTML = "<- 다시 입력"
+            }else{
+                window.open("quiz01_success.html")
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+    <input type="text" id="id" placeholder="id">
+    <h style="color: red;" id="required01">*필수항목</h>
+    <br>
+    <input type="password" id="pwd" placeholder="pwd">
+    <h style="color: red;" id="required02">*필수항목</h>
+    <br>
+    <input type="password" id="pwdChk" placeholder="pwdChk">
+    <span id="Check">비밀번호를 똑같이 입력</span>
+    <hr>
+    <button id="btn" onclick="myFocus()">등록</button>
+</div>
+</body>
+</html>

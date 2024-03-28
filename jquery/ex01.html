@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+<!--제이쿼리의 기본문법이 오류가 나지 않게 하는 방법
+jquery CDN에서 코드 복사 파일에 붙혀넣기
+>> src="https://code.jquery.com/jquery-3.7.1.min.js"부분만 받아서
+웹페이지 > F12 > 네트워크에서 제이쿼리 파일 save as 해서 파일로서 저장하기 > 작업폴더에 넣기
+-->
+
+    <script>
+        $(document).ready(function(){
+            $('.hide').click( function(){
+                $('p').hide();
+            }) 
+            $(".show").click( ()=>{
+                $('p').show();
+            } )
+        }) 
+    </script>
+</head>
+<body>
+    <p>이벤트 처리</p>
+    <button class="hide">메세지 삭제</button>
+    <button class="show">메세지 보기</button>
+</body>
+</html>

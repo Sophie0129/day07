@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        test =()=>{
+            let txt = document.getElementById('txt');
+            if(txt.value == ""){
+                alert('값을 입력하세요')
+                return;
+            }
+            //fo.submit();
+            console.log(fo)
+            console.log(fo.txt)//해당 태그의 내용을 가져올수 있다(콘솔에 뜬다)
+            console.log(fo.ddd)//다른 태그는 불러올 수 없다.(콘솔에 안뜸)
+
+            let f = document.getElementById('fo');//가지고 온다음 써야함
+            console.log (f.querySelector(".div"))//클래스를 가져오는건 가능
+            //console.log(fo.getElementById('ddd'))//아이디로 가져오는건 불가능
+
+            f.querySelector(".div").innerHTML = '다른 값 변경 가능'
+            document.getElementById('ddd').innerHTML = "다른 값 변경 가능"
+            //아이디로 값 바꾸려면 위처럼
+        }
+        
+    </script>
+</head>
+<body>
+    <form id ='fo' action="ex31.html">
+        <div id="ddd" class="div"></div>
+        <input type="text" id="txt"><br>
+        <input type="submit" onclick="test()" value="submit전송">
+        <input type="button" onclick="test()" value="btn전송">
+        <!-- submit은 form의 연결을 반드시 실행시킨다
+        onclick이 먼저 실행되고 다음에 실행됨
+    버튼은 온클릭만 실행시킴
+    버튼으로 form의 연결페이지로 이동하고 싶을땐 따로 폼에 아이디를 넣어
+    그 아이디에 승인메소드를 넣어준다-->
+
+    </form>
+    
+</body>
+</html>

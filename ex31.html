@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            let myC = document.getElementById('myC')
+            myC.addEventListener('click', myConfirm);
+            let myO = document.getElementById('myO')
+            myO.addEventListener('click', myOpen);
+        }
+        function myOpen(){
+            //window.open();//새창을 열어준다
+            //open('https://www.naver.com') //window는 생략가능
+            //window.open('https://www.naver.com','_self') //2개창이 아니라 1개로 내용만 바뀜
+            //window.open('ex30.html','','Width=500,height=500')//새창의 크기를 정함
+            window.open('popup.html','','Width=500,height=500')
+        }
+
+        const myConfirm = () => {
+            let result = confirm('처음 방문?');
+            console.log(result)
+            let msg = '';
+            if(result){
+                msg = '처음 방문 감사합니다';
+            }else{
+                msg = '재 방문 감사합니다';
+            }
+            document.getElementById('myP').innerHTML = msg;
+            
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="myC">클릭</button>
+    <p id="myP"></p>
+
+    <input type="button" id="myO" value="창 열기">
+</body>
+</html>

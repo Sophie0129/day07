@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFocus() {
+            let pwd = document.getElementById('pwd');
+            console.log(pwd.value)
+            if(pwd.value == ""){
+                alert('password는 필수 항목입니다')
+                pwd.focus();
+            }
+            else
+                document.getElementById('copy').value = pwd.value;
+        }
+
+        const pwdChk = () => {
+            let pwd = document.getElementById('pwd');
+            let pwdC = document.getElementById('pwdCheck')
+            if(pwd.value !== pwdC.value){
+                alert("일치하지 않습니다");
+                pwd.value = ""
+                pwdC.value = ""
+                pwd.focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--
+    <form action="ex29.html" method="get">
+        폼을 쓰면 메소드로 버튼에 기능을 추가 가능 ex) submit, reset
+        자바 스크립트는 온클릭, 온마우스오버 같이 하나씩 설정해줘야함
+    <input type="text" id="txt"><br>
+    <input type="text" id="pwd"><br>
+    <input type="text" id="copy"><br>
+    <input type="submit" value="클릭" onclick="myFocus()"><br>
+</form>
+-->
+
+<input type="text" id="txt" placeholder="id"><br>
+<input type="password" id="pwd" placeholder="pwd"><br> 
+<!--패스워드로 하면 입력값이 감춰지고 전부 0으로 입력된다.(한글이 입력되지 않는다)-->
+<input type="text" id="pwdCheck" placeholder="pwdchk" 
+onchange = "pwdChk()"><br>
+<!--온체인지는 마우스가 태그를 떠났을때? 실행된다-->
+    <input type="text" id="copy" placeholder="copy"><br>
+    <input type="button" value="클릭" onclick="myFocus()"><br>
+</body>
+</html>

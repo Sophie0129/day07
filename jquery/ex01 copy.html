@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.min.js"></script>
+
+<style>
+    #p {width: 100px; height: 100px; background: skyblue;}
+    #p1 {width: 100px; height: 100px; background: yellow;}
+    #p2 {width: 100px; height: 100px; background: green;}
+    #p3 {width: 100px; height: 100px; background: pink;}
+    #p3 {width: 100px; height: 100px; background: red;}
+</style>
+
+    <script>
+        $(document).ready(function(){ 
+            $(".show1").click( ()=>{
+                $('p').first().text('<b>버튼 1 클릭</b>');
+                $('p').change().
+            })
+            $(".show2").click( ()=>{
+                $('p').show();
+            })
+            $(".show3").click( ()=>{
+                $('p').show();
+            })
+            $(".show4").click( ()=>{
+                $('p').show();
+            })
+            $(".auto").click( ()=>{
+                $('p').show();
+            })
+            $(".romove").click( ()=>{
+                $('p').hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    
+    <button class="show1">버튼1</button>
+    <button class="show2">버튼2</button>
+    <button class="show3">버튼3</button>
+    <button class="show4">버튼4</button>
+    <button class="auto">자동</button>
+    <button class="remove">지우기</button>
+    <p id="p">버튼을 눌러주세요</p>
+
+</body>
+</html>
